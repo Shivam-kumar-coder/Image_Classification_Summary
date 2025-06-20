@@ -4,5 +4,6 @@ torchvision
 pillow
 transformers
 spacy
-opencv-python
+opencv-python-headless
+
 

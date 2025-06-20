@@ -56,6 +56,6 @@ if generate_btn :
             st.success("Done!")
             st.write("### Generated Text:")
             st.write(result[0]["generated_text"])
-            st.image(image, caption="🖼️ Uploaded Image", use_column_width=False)
+            st.image(image, caption="🖼️ Uploaded Image")
 
 

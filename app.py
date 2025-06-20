@@ -34,8 +34,8 @@ upload = st.file_uploader("Upload an image", type=["jpg", "png", "jpeg"])
 
 if upload is not None:
     image = Image.open(upload).convert('RGB')
-    image=image.resize(500,500)
-    st.image(image, caption="Uploaded Image")
+    images=image.resize(500,500)
+    st.image(images, caption="Uploaded Image")
 
     with st.spinner("Processing..."):
         i_tensor = imagepro(image)

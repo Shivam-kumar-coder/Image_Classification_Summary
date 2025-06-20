@@ -49,13 +49,13 @@ if generate_btn :
                 outputs = model(i_tensor)
                 a, predicted = torch.max(outputs, 1)
                 label = labels[predicted.item()]
-        st.success(f"Predicted Items is: {label}")
+        st.success(f"Predicted Image is: {label}")
         with st.spinner("Generating text..."):
             set_seed(42)
             result = generator(label, max_length=max_len, num_return_sequences=1)
             st.success("Done!")
             st.write("### Generated Text:")
             st.write(result[0]["generated_text"])
-            st.image(image, caption="🖼️ Uploaded Image")
+            st.image(f"{image}, caption=🖼️ Uploaded Image :{label}")
 
 

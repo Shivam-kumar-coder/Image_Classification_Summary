@@ -31,11 +31,12 @@ def imagepro(image):
     return transform(image).unsqueeze(0)
 
 def labe(image,label):
+    global predicted
     with st.spinner("Processing..."):
         i_tensor = imagepro(image)
         with torch.no_grad():
             outputs = model(i_tensor)
-            globle predicted
+            
             a, predicted = torch.max(outputs, 1)
     topic = label
     return topic
@@ -58,8 +59,8 @@ if upload is not None:
     image=image.resize((224,224))
     if gun:
         gen(topic,max_label)
-    else:
-        st.write("please")
+    #else:
+        #st.write("please")
     
     st.image(image, caption="Uploaded Image")
     labe(image)

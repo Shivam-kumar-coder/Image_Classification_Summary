@@ -29,7 +29,7 @@ def imagepro(image):
         transforms.ToTensor()
     ])
     return transform(image).unsqueeze(0)
-def labe(image):
+def labe(image,label):
     with st.spinner("Processing..."):
         i_tensor = imagepro(image)
         with torch.no_grad():
@@ -56,7 +56,8 @@ if upload is not None:
     image=image.resize((224,224))
     if gun:
         gen(label,max_label)
-   
+    else:
+        st.write("please")
     
     st.image(image, caption="Uploaded Image")
     labe(image)

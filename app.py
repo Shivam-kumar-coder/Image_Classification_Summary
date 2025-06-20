@@ -52,7 +52,7 @@ if generate_btn :
         st.success(f"Predicted Items is: {label}")
         with st.spinner("Generating text..."):
             set_seed(42)
-            result = generator(topic, max_length=max_len, num_return_sequences=1)
+            result = generator(label, max_length=max_len, num_return_sequences=1)
             st.success("Done!")
             st.write("### Generated Text:")
             st.write(result[0]["generated_text"])

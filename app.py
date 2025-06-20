@@ -35,9 +35,9 @@ def labe(image,label):
         with torch.no_grad():
             outputs = model(i_tensor)
             a, predicted = torch.max(outputs, 1)
-            label = label[predicted.item()]
+            labels = label[predicted.item()]
     
-    st.success(f"Predicted Items is: {label}")
+    st.success(f"Predicted Items is: {labels}")
     topic = label
     return topic
 def gen(topic,max_len,):

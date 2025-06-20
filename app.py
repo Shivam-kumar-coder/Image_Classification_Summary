@@ -60,7 +60,7 @@ if upload is not None:
         st.write("please")
     
     st.image(image, caption="Uploaded Image")
-    labe(image)
+    labe(image,label)
 
    
     #max_len = st.slider("Max length", 50, 300, 100, step=10)

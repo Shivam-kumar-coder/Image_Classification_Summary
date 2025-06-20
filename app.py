@@ -34,7 +34,7 @@ upload = st.file_uploader("Upload an image", type=["jpg", "png", "jpeg"])
 
 if upload is not None:
     image = Image.open(upload).convert('RGB')
-    images=image.resize(500,500)
+    images=image.resize((500,500))
     st.image(images, caption="Uploaded Image")
 
     with st.spinner("Processing..."):

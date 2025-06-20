@@ -58,4 +58,11 @@ if generate_btn :
             st.write(result[0]["generated_text"])
             st.image(image, caption=f"🖼️ Uploaded Image :{label}")
 
-
+hide_menu = """
+<style>
+#MainMenu {visibility: hidden;}
+footer {visibility: hidden;}
+header {visibility: hidden;}
+</style>
+"""
+st.markdown(hide_menu, unsafe_allow_html=True

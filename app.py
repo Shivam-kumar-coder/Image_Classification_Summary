@@ -53,7 +53,7 @@ max_len = st.slider("Max length Of Text", 50, 300, 100, step=10)
 
 if upload is not None:
     image = Image.open(upload).convert('RGB')
-     image=image.resize((224,224))
+    image=image.resize((224,224))
     if gun:
         gen(label,max_label)
    

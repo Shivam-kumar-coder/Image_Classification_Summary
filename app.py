@@ -39,7 +39,7 @@ generate_btn = st.button("🚀 Generate Text")
 # If image is uploaded
 if generate_btn :
     if upload is None:
-        st.info(" Plese UPlaod IMage")
+        st.info(" Please First The Uplaod IMage")
     else:
         image = Image.open(upload).convert('RGB')
         image = image.resize((200, 200))
@@ -56,6 +56,6 @@ if generate_btn :
             st.success("Done!")
             st.write("### Generated Text:")
             st.write(result[0]["generated_text"])
-            st.image(image, f"caption=🖼️ Uploaded Image :{label}")
+            st.image(image, caption=f"🖼️ Uploaded Image :{label}")
 
 

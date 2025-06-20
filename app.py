@@ -29,17 +29,19 @@ def imagepro(image):
         transforms.ToTensor()
     ])
     return transform(image).unsqueeze(0)
+
 def labe(image,label):
     with st.spinner("Processing..."):
         i_tensor = imagepro(image)
         with torch.no_grad():
             outputs = model(i_tensor)
+            globle predicted
             a, predicted = torch.max(outputs, 1)
-            labels = label[predicted.item()]
-    
-    st.success(f"Predicted Items is: {labels}")
     topic = label
     return topic
+def predict(la,p):
+    labels=la[p.item()]
+    st.success(f"Predicted Items is: {labels}")
 def gen(topic,max_len,):
     set_seed(42)
     result = generator(label, max_length=max_len, num_return_sequences=1)
@@ -55,12 +57,13 @@ if upload is not None:
     image = Image.open(upload).convert('RGB')
     image=image.resize((224,224))
     if gun:
-        gen(label,max_label)
+        gen(topic,max_label)
     else:
         st.write("please")
     
     st.image(image, caption="Uploaded Image")
-    labe(image,label)
+    labe(image)
+    predict(label,predicted)
 
    
     #max_len = st.slider("Max length", 50, 300, 100, step=10)

@@ -6,6 +6,7 @@ import torchvision.transforms as transforms
 import torchvision.models as models
 import streamlit as st
 from transformers import pipeline, set_seed
+import cv2
 
 @st.cache_resource
 def load_generator():
@@ -33,6 +34,7 @@ upload = st.file_uploader("Upload an image", type=["jpg", "png", "jpeg"])
 
 if upload is not None:
     image = Image.open(upload).convert('RGB')
+    image=cv2.resize(image,(500,500))
     st.image(image, caption="Uploaded Image")
 
     with st.spinner("Processing..."):

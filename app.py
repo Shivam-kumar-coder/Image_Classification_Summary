@@ -29,7 +29,7 @@ def imagepro(image):
     ])
     return transform(image).unsqueeze(0)
 
-st.title("🖼️ Image Classification + Text Summary App")
+st.title("🖼️ Image Classification + Text Generator App")
 
 # Upload image
 upload = st.file_uploader("📤 Upload an Image", type=["jpg", "png", "jpeg"])
